@@ -21,6 +21,9 @@ namespace DataAccessLayer.Contexts
         //    optionsBuilder.UseSqlServer("Server=.;database=CompanyMVC;trusted_Connection=true;");
         //}
 
+        // test for github changes
+        // test for github changes
+
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
     }
