@@ -1,0 +1,24 @@
+﻿@model UserVM
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Edit @Model.FName User</h1>
+<br />
+<br />
+
+<div asp-validation-summary="All"></div> @* List of whole form error message*@
+
+<form asp-action="Edit">
+    <partial name="PartialViews/CreateEditPartialView"></partial>
+
+    <input type="submit" value="Save" class="btn btn-primary" />
+    <a class="btn btn-secondary" asp-action="Index">Back To List</a>
+
+</form>
+@section ValidationScriptSection{
+        <partial name="_ValidationScriptsPartial"></partial>
+}
+

@@ -1,0 +1,23 @@
+﻿@model RoleVM
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create New Role</h2>
+
+<br />
+<br />
+
+<form asp-action="Create" enctype="multipart/form-data">
+    @*enctype by default =text/plain => (just string) but use multipart/form-data => (all types) to upload image*@
+    <partial name="PartialViews/CreateEditPartialView"></partial>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <a class="btn btn-secondary" asp-action="Index">Back To List</a>
+
+</form>
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial"></partial>
+}
+

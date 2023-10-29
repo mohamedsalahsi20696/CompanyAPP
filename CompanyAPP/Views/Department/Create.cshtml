@@ -1,0 +1,24 @@
+﻿@model DepartmentVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create New Department</h2>
+
+<br />
+<br />
+
+<form asp-action="Create">
+    <partial name="PartialViews/CreateEditPartialView"></partial>
+
+    <input type="submit" value="Submit" class="btn btn-primary" />
+    <a class="btn btn-secondary" asp-action="Index">Back To List</a>
+
+</form>
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial"></partial>
+}
+
+
+
+

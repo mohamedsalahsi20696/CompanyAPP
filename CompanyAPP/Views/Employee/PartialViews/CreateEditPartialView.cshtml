@@ -1,0 +1,66 @@
+﻿@model EmployeeVM
+@inject IUnitOfWork unitOfWork
+@{
+    var departments = new SelectList(await unitOfWork.DepartmentRepository.GetAll(), "Id", "Name");
+}
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Age"></label>
+    <input class="form-control" asp-for="Age" />
+    <span asp-validation-for="Age" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Address"></label>
+    <input class="form-control" asp-for="Address" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Salary"></label>
+    <input class="form-control" asp-for="Salary" />
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Department"></label>
+    <select class="form-control" asp-items="@departments" asp-for="DeptId">
+        <option value="Null">----- Select Department -----</option>
+    </select> 
+
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Email"></label>
+    <input class="form-control" asp-for="Email" />
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="PhoneNumber"></label>
+    <input class="form-control" asp-for="PhoneNumber" />
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="HireDate"></label>
+    <input class="form-control" asp-for="HireDate" />
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="CreationDate"></label>
+    <input class="form-control" asp-for="CreationDate" />
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="IsActive"></label>
+    <input class="form-control" asp-for="IsActive" />
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Image"></label>
+    <input class="form-control" asp-for="Image" />
+</div>

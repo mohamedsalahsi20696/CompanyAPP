@@ -1,0 +1,55 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_AuthLayout.cshtml";
+}
+
+<div asp-validation-summary="All" class="text-danger"></div> @* List of whole form error message*@
+
+<div class="agileits-top">
+    <form asp-action="Register" method="post">
+        
+        <div class="form-group">
+            <label class="col-form-label" asp-for="FName"></label>
+            <input class="form-control" asp-for="FName" placeholder="First Name">
+            <span asp-validation-for="FName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label" asp-for="LName"></label>
+            <input class="form-control" asp-for="LName" placeholder="Last Name">
+            <span asp-validation-for="LName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label" asp-for="Email"></label>
+            <input class="form-control email" asp-for="Email" placeholder="E-mail">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label" asp-for="Password"></label>
+            <input class="form-control" asp-for="Password" placeholder="Password">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="col-form-label" asp-for="ConfirmPassword"></label>
+            <input class="form-control" asp-for="ConfirmPassword" placeholder="Confirm Password">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <div class="wthree-text">
+            <label class="anim">
+                <input asp-for="IsAgree" class="checkbox" >
+                <span>I Agree To The Terms & Conditions</span>
+            </label>
+            <div class="clear"> </div>
+        </div>
+        <input type="submit" value="SIGNUP">
+    </form>
+    <p>Do you have an Account? <a asp-action="Login"> Login Now!</a></p>
+</div>
+@section ValidationScriptSection{
+    <partial name="_ValidationScriptsPartial"></partial>
+}
