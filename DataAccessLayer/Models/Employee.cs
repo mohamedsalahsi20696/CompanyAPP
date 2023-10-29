@@ -29,8 +29,5 @@ namespace DataAccessLayer.Models
         public int? DeptId { get; set; }
         [InverseProperty("Employees")]
         public Department Department { get; set; }
-
-        // test for github changes
-        // test for github changes
     }
 }
